@@ -29,7 +29,7 @@
                     <a href="{{ $href }}">{{ $label }}</a>
                 @endforeach
             </nav>
-            <flux:button href="#contacto" variant="primary" size="sm" icon:trailing="arrow-up-right" class="desktop-cta">Hablemos</flux:button>
+            <flux:button href="#contacto" variant="primary" size="sm" icon:trailing="arrow-up-right" class="desktop-cta cta-primary">Hablemos</flux:button>
             <button wire:click="toggleMenu" class="menu-toggle" aria-label="Abrir menú" aria-expanded="{{ $menuOpen ? 'true' : 'false' }}">
                 <span class="{{ $menuOpen ? 'open' : '' }}"></span><span class="{{ $menuOpen ? 'open' : '' }}"></span>
             </button>
@@ -39,7 +39,7 @@
                 @foreach ($links as [$href, $label])
                     <a href="{{ $href }}" wire:click="closeMenu">{{ $label }}</a>
                 @endforeach
-                <flux:button href="#contacto" wire:click="closeMenu" variant="primary">Hablemos</flux:button>
+                <flux:button href="#contacto" wire:click="closeMenu" variant="primary" class="cta-primary">Hablemos</flux:button>
             </nav>
         @endif
     </header>
@@ -52,7 +52,7 @@
                 <h1 class="reveal is-visible">Soluciones <em>integrales</em>,<br> entregadas con velocidad.</h1>
                 <p class="hero-copy reveal is-visible">Somos DUO Estudio. Diseñamos sistemas, marcas, automatizaciones y contenido visual — todo bajo un mismo equipo. Una sola conversación, un solo entregable.</p>
                 <div class="hero-actions reveal is-visible">
-                    <flux:button href="#contacto" variant="primary" icon:trailing="arrow-up-right">Agenda una llamada</flux:button>
+                    <flux:button href="#contacto" variant="primary" icon:trailing="arrow-up-right" class="cta-primary">Agenda una llamada</flux:button>
                     <flux:button href="#servicios" variant="ghost">Ver servicios</flux:button>
                 </div>
                 <div class="hero-brand reveal is-visible" aria-label="DUO Estudio">
