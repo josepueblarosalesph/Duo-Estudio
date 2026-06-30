@@ -10,6 +10,7 @@ foreach ([
     'LOG_CHANNEL' => 'stderr',
     'CACHE_STORE' => 'array',
     'SESSION_DRIVER' => 'array',
+    'QUEUE_CONNECTION' => 'sync',
     'VIEW_COMPILED_PATH' => '/tmp/views',
     'APP_CONFIG_CACHE' => '/tmp/config.php',
     'APP_EVENTS_CACHE' => '/tmp/events.php',
@@ -17,11 +18,9 @@ foreach ([
     'APP_ROUTES_CACHE' => '/tmp/routes.php',
     'APP_SERVICES_CACHE' => '/tmp/services.php',
 ] as $key => $value) {
-    if (getenv($key) === false) {
-        putenv("{$key}={$value}");
-        $_ENV[$key] = $value;
-        $_SERVER[$key] = $value;
-    }
+    putenv("{$key}={$value}");
+    $_ENV[$key] = $value;
+    $_SERVER[$key] = $value;
 }
 
 if (! is_dir('/tmp/views')) {

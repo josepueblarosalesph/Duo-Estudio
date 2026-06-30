@@ -3,6 +3,15 @@
     "framework": null,
     "buildCommand": "echo 'Using committed Vite assets'",
     "outputDirectory": "public",
+    "env": {
+        "APP_ENV": "production",
+        "APP_DEBUG": "false",
+        "LOG_CHANNEL": "stderr",
+        "CACHE_STORE": "array",
+        "SESSION_DRIVER": "array",
+        "QUEUE_CONNECTION": "sync",
+        "VIEW_COMPILED_PATH": "/tmp/views"
+    },
     "functions": {
         "api/index.php": {
             "runtime": "vercel-php@0.9.0",
