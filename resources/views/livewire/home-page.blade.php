@@ -12,12 +12,7 @@
         ['03', 'Construimos', 'Iteraciones cortas, demos frecuentes y comunicación directa.'],
         ['04', 'Lanzamos', 'Entrega, soporte y mejoras continuas. Tú creces, nosotros ajustamos.'],
     ];
-    $projects = [
-        ['Sistema', 'Plataforma de gestión', 'Dashboard interno para operación diaria.'],
-        ['Branding', 'Identidad para startup', 'Sistema visual completo y guidelines.'],
-        ['Automatización', 'Pipeline de leads', 'Captura, enriquecimiento y enrutado automático.'],
-        ['Video', 'Campaña de producto', 'Serie de piezas para redes y landing.'],
-    ];
+    $projects = config('portfolio.projects');
 @endphp
 
 <div class="site-shell">
@@ -100,9 +95,32 @@
         <section id="trabajo" class="section">
             <div class="container">
                 <div class="simple-heading reveal"><p class="eyebrow">Trabajo</p><h2>Casos seleccionados.</h2></div>
+                <article class="featured-project reveal">
+                    <div class="featured-project__intro">
+                        <div><p class="eyebrow">Branding · Coldtech</p><h3>Una identidad renovada para más de 30 años de experiencia.</h3></div>
+                        <p>Rediseñamos el universo visual de Coldtech para proyectar su trayectoria en refrigeración industrial con una marca más clara, moderna y consistente.</p>
+                    </div>
+                    <div class="coldtech-gallery coldtech-gallery--preview">
+                        <figure><img src="/projects/coldtech/01-brand-system.webp" alt="Sistema de identidad y manual de marca Coldtech" loading="lazy"></figure>
+                        <figure><img src="/projects/coldtech/05-applications.webp" alt="Aplicaciones corporativas y uniformes Coldtech" loading="lazy"></figure>
+                    </div>
+                    <div class="featured-project__footer">
+                        <div class="featured-project__meta"><span>Identidad visual</span><span>Manual de marca</span><span>Aplicaciones</span></div>
+                        <a href="{{ route('projects.coldtech') }}" class="project-link">Ver proyecto <flux:icon.arrow-up-right /></a>
+                    </div>
+                </article>
                 <div class="work-grid">
-                    @foreach ($projects as [$tag, $title, $desc])
-                        <article class="work-card reveal"><div class="bg-grid"></div><span>{{ $tag }}</span><div><h3>{{ $title }}</h3><p>{{ $desc }}</p></div><flux:icon.arrow-up-right /></article>
+                    @foreach ($projects as $slug => $project)
+                        <a href="{{ route('projects.show', $slug) }}" class="work-card work-card--media reveal">
+                            <div class="work-card__media">
+                                @if (isset($project['video']))
+                                    <video src="/projects/portfolio/{{ $project['video'] }}" autoplay muted loop playsinline preload="metadata" aria-label="{{ $project['title'] }}"></video>
+                                @else
+                                    <img src="/projects/portfolio/{{ $project['image'] }}" alt="{{ $project['title'] }}" loading="lazy">
+                                @endif
+                            </div>
+                            <div class="work-card__shade"></div><span>{{ $project['category'] }}</span><div class="work-card__copy"><h3>{{ $project['title'] }}</h3><p>{{ $project['description'] }}</p></div><flux:icon.arrow-up-right />
+                        </a>
                     @endforeach
                 </div>
             </div>
