@@ -1,7 +1,7 @@
 {
     "$schema": "https://www.schemastore.org/package.json",
     "engines": {
-        "node": "22.x"
+        "node": "20.x"
     },
     "private": true,
     "type": "module",
