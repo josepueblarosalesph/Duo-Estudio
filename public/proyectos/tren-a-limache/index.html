@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cristóbal Briceño · Tren a Limache — DUO Estudio</title>
+    <meta name="description" content="Sistemas a medida, imagen corporativa, automatizaciones, foto y video. Tu socio creativo y técnico en un solo lugar.">
+    <meta property="og:title" content="DUO Estudio">
+    <meta property="og:description" content="Sistemas, imagen corporativa, automatizaciones, foto y video. Construido con velocidad y precisión.">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <script type="module" src="http://[::1]:5173/@vite/client" data-navigate-track="reload"></script><link rel="stylesheet" href="http://[::1]:5173/resources/css/app.css" data-navigate-track="reload" /><script type="module" src="http://[::1]:5173/resources/js/app.js" data-navigate-track="reload"></script>    <style>
+    :root.dark {
+        color-scheme: dark;
+    }
+</style>
+<script>
+    window.Flux = {
+        applyAppearance (appearance) {
+            let applyDark = () => document.documentElement.classList.add('dark')
+            let applyLight = () => document.documentElement.classList.remove('dark')
+
+            if (appearance === 'system') {
+                let media = window.matchMedia('(prefers-color-scheme: dark)')
+
+                window.localStorage.removeItem('flux.appearance')
+
+                media.matches ? applyDark() : applyLight()
+            } else if (appearance === 'dark') {
+                window.localStorage.setItem('flux.appearance', 'dark')
+
+                applyDark()
+            } else if (appearance === 'light') {
+                window.localStorage.setItem('flux.appearance', 'light')
+
+                applyLight()
+            }
+        }
+    }
+
+    window.Flux.applyAppearance(window.localStorage.getItem('flux.appearance') || 'system')
+</script>
+</head>
+<body>
+    <div class="project-page">
+        <header class="project-nav">
+            <a href="http://localhost" aria-label="Volver al inicio"><img
+    src="http://localhost/logo-duo-light.png"
+    alt="DUO Estudio"
+    class="duo-logo nav-logo"
+    width="808"
+    height="415"
+>
+</a>
+            <a href="http://localhost#trabajo" class="project-back"><svg class="shrink-0 [:where(&amp;)]:size-6" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/>
+</svg>
+
+         Volver a proyectos</a>
+        </header>
+
+        <main>
+            <section class="project-hero container">
+                <p class="eyebrow">Video · 2024</p>
+                <h1>Cristóbal Briceño · Tren a Limache</h1>
+                <div class="project-summary">
+                    <p>Producción audiovisual para una pieza musical construida desde el paisaje, el trayecto y una mirada documental.</p>
+                    <div><span>Video</span><span>Videoclip</span><span>Dirección audiovisual</span></div>
+                </div>
+            </section>
+
+            <section class="imported-project-gallery is-video-project container" aria-label="Galería completa de Cristóbal Briceño · Tren a Limache">
+                                                        <figure class="is-image"  data-gallery-item data-gallery-index="0" tabindex="0" role="button" aria-label="Abrir imagen 1 de Cristóbal Briceño · Tren a Limache" >
+                                                    <img src="/projects/portfolio/galleries/tren-a-limache/vlcsnap-2025-07-21-14h08m11s886-scaled.webp" alt="Cristóbal Briceño · Tren a Limache — imagen 1" loading="eager" decoding="async">
+                                            </figure>
+                            </section>
+
+            <div class="gallery-lightbox" data-gallery-lightbox hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Visor de galería">
+                <button type="button" class="gallery-lightbox__close" data-gallery-close aria-label="Cerrar galería">×</button>
+                <button type="button" class="gallery-lightbox__nav gallery-lightbox__nav--prev" data-gallery-prev aria-label="Imagen anterior">‹</button>
+                <div class="gallery-lightbox__stage"><img src="" alt=""></div>
+                <button type="button" class="gallery-lightbox__nav gallery-lightbox__nav--next" data-gallery-next aria-label="Imagen siguiente">›</button>
+                <span class="gallery-lightbox__counter" data-gallery-counter aria-live="polite"></span>
+            </div>
+
+            <section class="project-next container">
+                <p class="eyebrow">¿Tienes un proyecto en mente?</p>
+                <h2>Construyamos algo que destaque.</h2>
+                <a href="http://localhost#contacto" class="project-link">Hablemos <svg class="shrink-0 [:where(&amp;)]:size-6" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"/>
+</svg>
+
+        </a>
+            </section>
+        </main>
+    </div>
+    </body>
+</html>

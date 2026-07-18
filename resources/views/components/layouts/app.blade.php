@@ -16,6 +16,8 @@
 </head>
 <body>
     {{ $slot }}
-    @fluxScripts
+    @unless (env('STATIC_EXPORT', false))
+        @fluxScripts
+    @endunless
 </body>
 </html>

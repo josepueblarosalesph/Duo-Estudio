@@ -18,25 +18,23 @@
 <div class="site-shell">
     <header class="site-header reveal is-visible">
         <div class="nav-wrap glass">
-            <a href="#top" wire:click="closeMenu" class="logo-link"><x-logo class="nav-logo" /></a>
+            <a href="#top" class="logo-link"><x-logo class="nav-logo" /></a>
             <nav class="desktop-nav" aria-label="Navegación principal">
                 @foreach ($links as [$href, $label])
                     <a href="{{ $href }}">{{ $label }}</a>
                 @endforeach
             </nav>
             <flux:button href="#contacto" variant="primary" size="sm" icon:trailing="arrow-up-right" class="desktop-cta" style="background:#292929;color:#fff;border-color:rgba(255,255,255,.22);box-shadow:inset 0 1px rgba(255,255,255,.06)">Hablemos</flux:button>
-            <button wire:click="toggleMenu" class="menu-toggle" aria-label="Abrir menú" aria-expanded="{{ $menuOpen ? 'true' : 'false' }}">
-                <span class="{{ $menuOpen ? 'open' : '' }}"></span><span class="{{ $menuOpen ? 'open' : '' }}"></span>
+            <button type="button" class="menu-toggle" data-menu-toggle aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-navigation">
+                <span></span><span></span>
             </button>
         </div>
-        @if ($menuOpen)
-            <nav class="mobile-nav glass" aria-label="Navegación móvil">
-                @foreach ($links as [$href, $label])
-                    <a href="{{ $href }}" wire:click="closeMenu">{{ $label }}</a>
-                @endforeach
-                <flux:button href="#contacto" wire:click="closeMenu" variant="primary" style="background:#292929;color:#fff;border-color:rgba(255,255,255,.22);box-shadow:inset 0 1px rgba(255,255,255,.06)">Hablemos</flux:button>
-            </nav>
-        @endif
+        <nav id="mobile-navigation" class="mobile-nav glass" data-mobile-menu aria-label="Navegación móvil" aria-hidden="true">
+            @foreach ($links as [$href, $label])
+                <a href="{{ $href }}">{{ $label }}</a>
+            @endforeach
+            <flux:button href="#contacto" variant="primary" style="background:#292929;color:#fff;border-color:rgba(255,255,255,.22);box-shadow:inset 0 1px rgba(255,255,255,.06)">Hablemos</flux:button>
+        </nav>
     </header>
 
     <main>

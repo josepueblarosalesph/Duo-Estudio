@@ -13,6 +13,25 @@ const reveal = () => {
     document.querySelectorAll('.reveal:not(.is-visible)').forEach((element) => observer.observe(element));
 };
 
+const initMobileMenu = () => {
+    const toggle = document.querySelector('[data-menu-toggle]');
+    const menu = document.querySelector('[data-mobile-menu]');
+
+    if (!toggle || !menu || toggle.dataset.menuReady) return;
+    toggle.dataset.menuReady = 'true';
+
+    const setOpen = (open) => {
+        menu.classList.toggle('is-open', open);
+        menu.setAttribute('aria-hidden', String(!open));
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+        toggle.querySelectorAll('span').forEach((line) => line.classList.toggle('open', open));
+    };
+
+    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+};
+
 const initProjectGallery = () => {
     const gallery = document.querySelector('.imported-project-gallery');
     const lightbox = document.querySelector('[data-gallery-lightbox]');
@@ -80,5 +99,5 @@ const initProjectGallery = () => {
     });
 };
 
-document.addEventListener('DOMContentLoaded', () => { reveal(); initProjectGallery(); });
-document.addEventListener('livewire:navigated', () => { reveal(); initProjectGallery(); });
+document.addEventListener('DOMContentLoaded', () => { reveal(); initMobileMenu(); initProjectGallery(); });
+document.addEventListener('livewire:navigated', () => { reveal(); initMobileMenu(); initProjectGallery(); });
