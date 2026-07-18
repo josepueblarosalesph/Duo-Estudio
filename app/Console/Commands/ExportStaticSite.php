@@ -48,6 +48,7 @@ class ExportStaticSite extends Command
     {
         $html = preg_replace('/<!-- Livewire Styles --><style\b[^>]*>.*?<\/style>/s', '', $html) ?? $html;
         $html = preg_replace('/<script\b[^>]*livewire[^>]*>.*?<\/script>/s', '', $html) ?? $html;
+        $html = str_replace(['http://localhost', 'https://localhost'], '', $html);
 
         return preg_replace('/\s+wire:(?:snapshot|effects|id|name)="[^"]*"/', '', $html) ?? $html;
     }
