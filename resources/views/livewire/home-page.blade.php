@@ -131,9 +131,8 @@
                         <ul>@foreach (['Un solo equipo, sin intermediarios','Entregas en semanas, no en meses','Comunicación directa con quien construye'] as $benefit)<li><flux:icon.check />{{ $benefit }}</li>@endforeach</ul>
                     </div>
                     <div class="contact-links">
-                        <a href="mailto:hola@duoestudio.com"><span class="icon-box"><flux:icon.envelope /></span><span><small>Escríbenos</small><strong>hola@duoestudio.com</strong></span><flux:icon.arrow-up-right /></a>
-                        <a href="https://wa.me/" rel="noopener"><span class="icon-box"><flux:icon.chat-bubble-left-right /></span><span><small>WhatsApp</small><strong>Respondemos en minutos</strong></span><flux:icon.arrow-up-right /></a>
-                        <a href="https://instagram.com/" rel="noopener"><span class="icon-box"><flux:icon.camera /></span><span><small>Instagram</small><strong>@duo.estudio</strong></span><flux:icon.arrow-up-right /></a>
+                        <a href="mailto:duoestudio.contacto@gmail.com"><span class="icon-box"><flux:icon.envelope /></span><span><small>Escríbenos</small><strong>duoestudio.contacto@gmail.com</strong></span><flux:icon.arrow-up-right /></a>
+                        <a href="https://wa.me/56966372809" target="_blank" rel="noopener"><span class="icon-box"><flux:icon.chat-bubble-left-right /></span><span><small>WhatsApp</small><strong>+56 9 6637 2809</strong></span><flux:icon.arrow-up-right /></a>
                     </div>
                 </div>
             </div>
